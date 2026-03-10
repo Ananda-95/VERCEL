@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Suspense } from "react";
+import Loader from "./Loader";
+import routes from "./routes";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Navbar from "./js/Navbar";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {/* <nav>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/treeview1">Tree View 1</NavLink>
+        <NavLink to="/treeview2">Tree View 2</NavLink>
+      </nav> */}
+      <Navbar />
+
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

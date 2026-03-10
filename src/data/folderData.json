@@ -1,0 +1,39 @@
+{
+  "React-Treeview": {
+    "public": {
+      "index.html": "file",
+      "favicon.ico": "file",
+      "manifest.json": "file",
+      "robots.txt": "file"
+    },
+    "src": {
+      "api": {
+        "axiosClient.js": "file",
+        "apiEndpoints.js": "file"
+      },
+      "app": {
+        "store.js": "file",
+        "rootReducer.js": "file"
+      },
+      "assets": {
+        "images": {},
+        "icons": {},
+        "styles": {
+          "global.css": "file",
+          "variables.css": "file"
+        }
+      },
+      "components": {
+        "common": {
+          "Button": {
+            "Button.js": "file",
+            "Button.css": "file"
+          }
+        }
+      },
+      "App.js": "file",
+      "index.js": "file"
+    },
+    "package.json": "file"
+  }
+}

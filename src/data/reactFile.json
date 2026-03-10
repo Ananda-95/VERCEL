@@ -1,0 +1,27 @@
+{
+  "my-react-app": {
+    "node_modules": {},
+    "public": {
+      "index.html": {},
+      "favicon.ico": {},
+      "manifest.json": {},
+      "robots.txt": {}
+    },
+    "src": {
+      "assets": {},
+      "components": {},
+      "App.css": {},
+      "App.jsx": {},
+      "App.test.js": {},
+      "index.css": {},
+      "index.js": {},
+      "logo.svg": {},
+      "reportWebVitals.js": {},
+      "setupTests.js": {}
+    },
+    ".gitignore": {},
+    "package.json": {},
+    "README.md": {},
+    "vite.config.js": {}
+  }
+}
