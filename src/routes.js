@@ -2,9 +2,9 @@ import React, {lazy} from "react";
 import folderData from "./data/folderData.json"; // import JSON first
 import reactFile from "./data/reactFile.json"
 const Home = lazy(()=>import("./components/Home"));
-const TreeView1 = lazy(()=>import("./components/TreeView1"));
-const TreeView2 = lazy(()=>import("./components/TreeView2"));
-const TaskManager= lazy(()=>import("./components/taskManager/TaskManager"));
+const TreeView1 = lazy(()=>import("./components/Treeview/TreeView1"));
+const TreeView2 = lazy(()=>import("./components/Treeview/TreeView2"));
+const TaskManager= lazy(()=>import("./components/TaskManager/TaskManager"));
 const route = [
   {
     path:"/",
