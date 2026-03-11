@@ -4,7 +4,7 @@ import reactFile from "./data/reactFile.json"
 const Home = lazy(()=>import("./components/Home"));
 const TreeView1 = lazy(()=>import("./components/Treeview/TreeView1"));
 const TreeView2 = lazy(()=>import("./components/Treeview/TreeView2"));
-const TaskManager= lazy(()=>import("./components/TaskManager/TaskManager"));
+const TaskManager= lazy(()=>import("./components/taskManager/tasks"));
 const route = [
   {
     path:"/",
