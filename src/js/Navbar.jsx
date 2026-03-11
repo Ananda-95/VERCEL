@@ -1,69 +1,62 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../css/navbar.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <header className="navbar">
-      <div className="navbar-container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container-fluid">
+        {/* Logo */}
+        <NavLink className="navbar-brand" to="/">
+          VERCEL
+        </NavLink>
 
-        <div className="logo">MyApp</div>
-
-        <div
-          className="menu-icon"
+        {/* Hamburger button */}
+        <button
+          className="navbar-toggler"
+          type="button"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-controls="navbarNav"
+          aria-expanded={menuOpen}
+          aria-label="Toggle navigation"
         >
-          ☰
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Menu items */}
+        <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/taskmanager" onClick={() => setMenuOpen(false)}>
+                Task Manager
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/form" onClick={() => setMenuOpen(false)}>
+                Form
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/products" onClick={() => setMenuOpen(false)}>
+                Product
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/treeview1" onClick={() => setMenuOpen(false)}>
+                Tree View
+              </NavLink>
+            </li>
+          </ul>
         </div>
-
-        <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
-
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>
-            Home
-          </NavLink>
-
-          <NavLink to="/taskmanager" onClick={() => setMenuOpen(false)}>Task Manager</NavLink>
-
-          <div
-            className="dropdown"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-          >
-            <span className="dropdown-title">
-              Tree Views ▾
-            </span>
-
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                <NavLink
-                  to="/treeview1"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setDropdownOpen(false);
-                  }}
-                >
-                  Tree View 1
-                </NavLink>
-
-                <NavLink
-                  to="/treeview2"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setDropdownOpen(false);
-                  }}
-                >
-                  Tree View 2
-                </NavLink>
-              </div>
-            )}
-
-          </div>
-
-        </nav>
       </div>
-    </header>
+    </nav>
   );
 }
 

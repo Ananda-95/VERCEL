@@ -5,6 +5,8 @@ const Home = lazy(()=>import("./components/Home"));
 const TreeView1 = lazy(()=>import("./components/Treeview/TreeView1"));
 const TreeView2 = lazy(()=>import("./components/Treeview/TreeView2"));
 const TaskManager= lazy(()=>import("./components/taskManager/tasks"));
+const Products = lazy (()=>import("./components/DataTable/ProductTable"));
+const SimpleForm = lazy(()=> import("./components/Form/SimpleForm"))
 const route = [
   {
     path:"/",
@@ -21,6 +23,13 @@ const route = [
   {
     path:"/taskManager",
     element:<TaskManager />
+  },
+  {
+    path:"/products",
+    element:<Products />
+  },{
+    path:"/form",
+    element:<SimpleForm />
   }
 
 ]
